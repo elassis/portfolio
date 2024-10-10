@@ -30,5 +30,5 @@ jobs:
           server: ftp://enmanuellassis.com # Replace with your Hostinger FTP server
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: build
+          local-dir: build/
           server-dir: /public_html # Change this if needed (the directory where your site is hosted)
