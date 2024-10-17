@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { StyledButton, StyledContactForm, StyledFormBody, FormFooter, Response } from "../ContactSectionStyles";
-import Icon from "../../../assets/icons/Icon";
-import ReCAPTCHA from "react-google-recaptcha";
+import { StyledContactForm, StyledFormBody, FormFooter, Response } from "../ContactSectionStyles";
+import { Button } from "@common";
+
 
 const ContactForm = () => {
 
@@ -10,13 +10,7 @@ const ContactForm = () => {
     message: ''
   });
 
-  const [captchaValue, setCaptchaValue] = useState(null);
   const [response, setResponse] = useState({ mssg: null, status: null });
-
-
-  const handleCaptchaChange = (value) => {
-    setCaptchaValue(value);
-  };
 
   const handleChange = (e) => {
     setFormData({
@@ -25,44 +19,48 @@ const ContactForm = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-
-    if (!captchaValue) {
-      setResponse({ mssg: 'please, complete the captcha!', status: 500 })
-      return;
-    }
-
-    fetch('http://localhost:5000/send-email', {
+    const data = {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify(formData)
-    })
-      .then(response => response.status === 200 && setResponse({ mssg: 'email sent!', status: 200 }))
-      .catch((error) => {
-        setResponse({ mssg: 'there was an error, please try again!', status: 500 })
-        console.error('Error:', error);
-      });
+    };
+
+    try {
+      const response = await fetch('http://localhost:5000/send-email', data);
+      response.status === 200 && setResponse({ mssg: 'email sent!', status: 200 });
+    } catch (error) {
+      setResponse({ mssg: 'there was an error, please try again!', status: 500 })
+      console.error('Error:', error);
+    }
+
   };
 
   return (
     <StyledFormBody>
       <StyledContactForm method="POST" onSubmit={handleSubmit}>
-        <input type="email" name="email" value={formData.email} onChange={handleChange} placeholder="Type your email here" />
-        <textarea name="message" value={formData.message} onChange={handleChange} placeholder="Type your message here"></textarea>
-        {response.mssg !== null && <Response $status={response.status}>{response.mssg}</Response>}
-        {/* <Response $status={500}>{'this is a fake mssg'}</Response> */}
+        <input
+          type="email"
+          name="email"
+          value={formData.email}
+          onChange={handleChange}
+          placeholder="Type your email here"
+        />
+        <textarea
+          name="message"
+          value={formData.message}
+          onChange={handleChange}
+          placeholder="Type your message here"
+        />
         <FormFooter>
-          <ReCAPTCHA
-            sitekey="YOUR_SITE_KEY" // Use the site key from your Google reCAPTCHA account
-            onChange={handleCaptchaChange}
-          />
-          <StyledButton>
-            <Icon name="send" />
-            <button type="submit">send</button>
-          </StyledButton>
+          {response.mssg !== null && <Response $status={response.status}>{response.mssg}</Response>}
+          <Button
+            text={"send"}
+            iconName={"send"}
+            isDisabled={formData.message === '' || formData.email === ''} />
         </FormFooter>
       </StyledContactForm>
     </StyledFormBody>

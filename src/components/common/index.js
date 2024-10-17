@@ -6,3 +6,4 @@ export { default as Text } from "./Text/Text";
 export { default as Tag } from "./Tag/Tag";
 export { default as Carousel } from "./Carousel/Carousel";
 export { default as Link } from "./Link/Link";
+export { default as Button } from "./Button/Button";

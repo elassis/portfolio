@@ -85,30 +85,7 @@ export const StyledContactForm = styled.form`
 }
 `;
 
-export const StyledButton = styled.div`
-  display:flex;
-  width:100px;
-  justify-content: flex-start;
-  gap: 6px;
-  align-self: flex-end;
-  padding: 0 10px;
-  box-sizing: border-box;
-  border-radius: 30px;
-  background-color:#${colors.blue};
 
-  button {
-    display: block;    
-    padding: 11px 0px;
-    box-sizing: border-box;
-    background-color: transparent;
-    border: none;
-    font-size: 1rem;
-    text-transform: capitalize;
-    font-weight: 600;
-    color: #${colors.white};
-
-  }
-`;
 
 export const StyledSocialLink = styled.a`
   padding: 8px 10px;
@@ -136,8 +113,8 @@ export const FormFooter = styled.div`
 `;
 
 export const Response = styled.div`
-  max-width:100%;
   display:flex;
+  flex-grow:1;
   align-items:center;
   justify-content:center;
   white-space:nowrap;
@@ -148,6 +125,7 @@ export const Response = styled.div`
   text-transform:capitalize;
   background-color:#${props => props.$status === 200 ? `${colors.green25}` : `${colors.red25}`};
   color:#${props => props.$status === 200 ? `${colors.green100}` : `${colors.red100}`};
+  font-family: ${fonts.default}; 
   `;
 
 
