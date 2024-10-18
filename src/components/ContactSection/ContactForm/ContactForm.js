@@ -1,6 +1,8 @@
 import React, { useState } from "react";
+import process from "process";
 import { StyledContactForm, StyledFormBody, FormFooter, Response } from "../ContactSectionStyles";
 import { Button } from "@common";
+import { endpoints } from "../../../utils/constants";
 
 
 const ContactForm = () => {
@@ -21,6 +23,7 @@ const ContactForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     const data = {
       method: 'POST',
       headers: {
@@ -29,8 +32,10 @@ const ContactForm = () => {
       body: JSON.stringify(formData)
     };
 
+    const backendUrl = endpoints[process.env.NODE_ENV];
+
     try {
-      const response = await fetch('http://localhost:5000/send-email', data);
+      const response = await fetch(`${backendUrl}/send-email`, data);
       response.status === 200 && setResponse({ mssg: 'email sent!', status: 200 });
     } catch (error) {
       setResponse({ mssg: 'there was an error, please try again!', status: 500 })

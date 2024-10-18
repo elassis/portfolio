@@ -116,3 +116,8 @@ export const socialMediaIcons = [
   { iconName: 'instagram', href: '#' },
   { iconName: 'facebook', href: '#' },
 ];
+
+export const endpoints = {
+  development: 'http://localhost:5000',
+  production: 'https://enmanuellassis.com/portfolio-backend',
+};
