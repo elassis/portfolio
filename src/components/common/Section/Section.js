@@ -5,11 +5,12 @@ import { StyledSection, ChildrenContainer } from "./SectionStyles";
 
 const Section = ({
   children,
-  backgroundColor = colors.blue,
-  sectionHeight = "600px",
-  containerStyles = {},
+  sectionId,
   styles = {},
   direction = 'row',
+  containerStyles = {},
+  sectionHeight = "600px",
+  backgroundColor = colors.blue,
 }) => {
   return (
     <StyledSection
@@ -17,6 +18,7 @@ const Section = ({
       $sectionHeight={sectionHeight}
       data-testid="section"
       style={styles}
+      id={sectionId}
     >
       <ChildrenContainer direction={direction} $containerStyles={containerStyles}>
         {children}

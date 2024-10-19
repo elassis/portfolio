@@ -16,7 +16,7 @@ export const LinksContainer = styled.div`
   display:none;  
   @media (min-width:700px){
     display: flex;
-    width:500px;
+    width:850px;
     margin:auto;
     justify-content:space-between;
   }

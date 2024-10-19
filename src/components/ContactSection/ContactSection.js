@@ -11,6 +11,7 @@ const ContactSection = (props) => {
     direction: "column",
     sectionHeight: "fit-content",
     backgroundColor: colors.white,
+    sectionId: "contact"
   };
 
   return (

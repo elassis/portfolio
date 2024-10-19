@@ -30,6 +30,7 @@ const PortfolioSection = (props) => {
     direction: "column",
     sectionHeight: "fit-content",
     backgroundColor: colors.blue,
+    sectionId: "portfolio"
   };
 
   return (

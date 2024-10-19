@@ -1,20 +1,24 @@
 import React from "react";
 import { StyledNavbar, LinksContainer, HamburgerContainer } from "./NavbarStyles";
-import Link from "../common/Link/Link";
+import { Link } from "@common";
 import Icon from "../../assets/icons/Icon";
 import { colors } from "../../styles/colors";
+import { NavbarLinks } from "../../utils/constants";
+import { v4 as uuidv4 } from "uuid";
 
 const Navbar = () => {
   return (
     <StyledNavbar>
       <HamburgerContainer>
-        <Icon name="menu" color={colors.white} width="50px" height="50px" />
+        <Icon
+          name="menu"
+          width="50px"
+          height="50px"
+          color={colors.white}
+        />
       </HamburgerContainer>
       <LinksContainer>
-        <Link route="#" text="portfolio" />
-        <Link route="#" text="skills" />
-        <Link route="#" text="projects" />
-        <Link route="#" text="contact" type="button" />
+        {NavbarLinks.map(navLink => <Link key={uuidv4()} {...navLink} />)}
       </LinksContainer>
     </StyledNavbar>
   );

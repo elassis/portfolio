@@ -9,6 +9,7 @@ const SkillsSection = (props) => {
     direction: "column",
     sectionHeight: "fit-content",
     backgroundColor: colors.white,
+    sectionId: "skills"
   };
 
   const paragraphProps = {

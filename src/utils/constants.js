@@ -39,13 +39,20 @@ export const SKILLS = [
   },
   {
     title: "tools", tags: [
-      { text: 'PHPunit | 3 years', src: phpunitLogo },
+      { text: "PHPunit | 3 years", src: phpunitLogo },
       { text: "Jest | 3 years", src: jestLogo },
       { text: "MySQL | 5 years", src: mysqlLogo },
       { text: "Wordpress | 5 years", src: wordpressLogo },
     ]
   },
 ];
+
+export const NavbarLinks = [
+  { route: "#skills", text: "skills" },
+  { route: "#portfolio", text: "portfolio" },
+  { route: "#contact", text: "contact", type: "button" },
+];
+
 
 export const PROJECTS = [
   {
@@ -112,9 +119,9 @@ export const TagsData = [
 ];
 
 export const socialMediaIcons = [
-  { iconName: 'linkedin', href: '#' },
-  { iconName: 'instagram', href: '#' },
-  { iconName: 'facebook', href: '#' },
+  { iconName: 'linkedin', href: 'https://www.linkedin.com/in/enmanuel-lassis-software-developer/' },
+  { iconName: 'instagram', href: 'https://www.instagram.com/enmanuellassis/' },
+  { iconName: 'facebook', href: 'https://www.facebook.com/elassis' },
 ];
 
 export const endpoints = {
