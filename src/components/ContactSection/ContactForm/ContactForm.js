@@ -3,7 +3,9 @@ import process from "process";
 import { StyledContactForm, StyledFormBody, FormFooter, Response } from "../ContactSectionStyles";
 import { Button } from "@common";
 import { endpoints } from "../../../utils/constants";
-
+import { ThreeDot } from "react-loading-indicators";
+import Icon from "../../../assets/icons/Icon";
+import { colors } from "../../../styles/colors";
 
 const ContactForm = () => {
 
@@ -13,6 +15,7 @@ const ContactForm = () => {
   });
 
   const [response, setResponse] = useState({ mssg: null, status: null });
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
     setFormData({
@@ -23,6 +26,7 @@ const ContactForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
 
     const data = {
       method: 'POST',
@@ -37,9 +41,15 @@ const ContactForm = () => {
     try {
       const response = await fetch(`${backendUrl}/send-email`, data);
       response.status === 200 && setResponse({ mssg: 'email sent!', status: 200 });
+      setFormData({ email: '', message: '' });
     } catch (error) {
       setResponse({ mssg: 'there was an error, please try again!', status: 500 })
       console.error('Error:', error);
+    } finally {
+      setLoading(false);
+      setTimeout(() => {
+        setResponse({ mssg: null, status: null });
+      }, 5000);
     }
 
   };
@@ -62,10 +72,11 @@ const ContactForm = () => {
         />
         <FormFooter>
           {response.mssg !== null && <Response $status={response.status}>{response.mssg}</Response>}
-          <Button
+          {loading && <ThreeDot variant="bounce" color={`#${colors.blue}`} size="small" />}
+          {!loading && (<Button
             text={"send"}
-            iconName={"send"}
-            isDisabled={formData.message === '' || formData.email === ''} />
+            icon={formData.message !== '' && formData.email !== '' && <Icon name="send" />}
+            isDisabled={formData.message === '' || formData.email === ''} />)}
         </FormFooter>
       </StyledContactForm>
     </StyledFormBody>

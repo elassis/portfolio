@@ -1,11 +1,10 @@
 import React from "react";
 import { StyledButton } from "./ButtonStyles";
-import Icon from "../../../assets/icons/Icon";
 
-const Button = ({ iconName, text, isDisabled }) => {
+const Button = ({ icon = null, text, isDisabled }) => {
   return (
     <StyledButton disabled={isDisabled}>
-      <Icon name={iconName} />
+      {icon}
       <button disabled={isDisabled} type="submit">{text}</button>
     </StyledButton>
   )
