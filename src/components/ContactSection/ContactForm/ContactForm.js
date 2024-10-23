@@ -6,6 +6,7 @@ import { endpoints } from "../../../utils/constants";
 import { ThreeDot } from "react-loading-indicators";
 import Icon from "../../../assets/icons/Icon";
 import { colors } from "../../../styles/colors";
+import fetchData from "../../../utils/fetchData";
 
 const ContactForm = () => {
 
@@ -26,6 +27,7 @@ const ContactForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     setLoading(true);
 
     const data = {
@@ -38,19 +40,22 @@ const ContactForm = () => {
 
     const backendUrl = endpoints[process.env.NODE_ENV];
 
-    try {
-      const response = await fetch(`${backendUrl}/send-email`, data);
-      response.status === 200 && setResponse({ mssg: 'email sent!', status: 200 });
-      setFormData({ email: '', message: '' });
-    } catch (error) {
-      setResponse({ mssg: 'there was an error, please try again!', status: 500 })
-      console.error('Error:', error);
-    } finally {
-      setLoading(false);
-      setTimeout(() => {
-        setResponse({ mssg: null, status: null });
-      }, 5000);
-    }
+    const { response, loading } = await fetchData(`${backendUrl}/send-email`, data);
+
+    setLoading(loading);
+
+    setResponse(() => {
+      if (response.status !== 500) {
+        setFormData({ email: '', message: '' });
+        return { mssg: 'Email sent', status: response.status }
+      } else {
+        return { mssg: 'there was an error :(', status: response.status }
+      }
+    });
+
+    setTimeout(() => {
+      setResponse({ mssg: null, status: null });
+    }, 5000);
 
   };
 
