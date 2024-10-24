@@ -50,7 +50,7 @@ export const SKILLS = [
 export const NavbarLinks = [
   { route: "#skills", text: "skills" },
   { route: "#portfolio", text: "portfolio" },
-  { route: "#contact", text: "contact", type: "button" },
+  { route: "#contact", text: "contact" },
 ];
 
 

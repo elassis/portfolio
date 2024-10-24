@@ -2,6 +2,9 @@ import styled from "styled-components";
 import { colors } from "@styles/colors";
 
 export const StyledNavbar = styled.nav`
+  position: sticky;
+  top: 0;
+  z-index: 100;
   width: 100%;
   height: 70px;
   display:flex;
@@ -16,7 +19,7 @@ export const LinksContainer = styled.div`
   display:none;  
   @media (min-width:700px){
     display: flex;
-    width:850px;
+    width:450px;
     margin:auto;
     justify-content:space-between;
   }

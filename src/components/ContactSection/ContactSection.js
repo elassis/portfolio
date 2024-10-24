@@ -9,7 +9,7 @@ const ContactSection = (props) => {
 
   const sectionProps = {
     direction: "column",
-    sectionHeight: "fit-content",
+    sectionHeight: "700px",
     backgroundColor: colors.white,
     sectionId: "contact"
   };
