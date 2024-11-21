@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Section } from "@common";
-import { colors } from "../../styles/colors";
 import ProjectBox from "./ProjectBox/ProjectBox.js";
-import { PROJECTS, SKILL_EXCERT } from "../../utils/constants.js";
+import { PROJECTS, PORTFOLIO_EXCERT } from "../../utils/constants.js";
 import { ImageContainer } from "./ProjectBox/ProjectBoxStyles.js";
 import { imageVariants } from "./ProjectBox/Variants.js";
 import { InnerContainer, Row } from "./PortFolioSectionStyles.js";
@@ -19,7 +18,7 @@ const PortfolioSection = (props) => {
   const sectionProps = {
     displayText: true,
     sectionText: "portfolio",
-    sectionSubtext: SKILL_EXCERT,
+    sectionSubtext: PORTFOLIO_EXCERT,
     sectionHeight: "fit-content",
     sectionId: "portfolio",
   };

@@ -20,7 +20,8 @@ import {
 
 export const MAIN_EXCERT = "I’m a pationated Software engineer who is more than happy to help you to create the great solution you have in mind.";
 export const SKILL_EXCERT = "Here you can see the variety of tools that I'm most proficient at. which showcase my versatility but also I have the ability adapt and learn new technologies fast.";
-export const CONTACT_EXCERT = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a turpis id dui ultricies suscipit. Proin euismod elementum bibendum.";
+export const PORTFOLIO_EXCERT = "These are my latest and bigger projects and detail information about them and links to both live site and github repository.";
+export const CONTACT_EXCERT = "Here you'll find my contact information if you are interested in us working together with me as part of your team or as a freelancer.";
 export const SKILLS = [
   {
     title: "frontend", tags: [
