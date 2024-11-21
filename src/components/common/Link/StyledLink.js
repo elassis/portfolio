@@ -20,5 +20,6 @@ ${props => props.type === 'button' &&
     -moz-box-shadow: 0px 0px 37px -9px rgba(69,65,69,1);
     box-shadow: 0px 0px 37px -9px rgba(69,65,69,1);
  `}
-
+ 
+ ${props => props.style}
 `;

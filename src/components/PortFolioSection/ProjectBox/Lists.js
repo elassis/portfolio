@@ -1,11 +1,14 @@
 import React from "react";
 import { v4 as uuidv4 } from "uuid";
 import Icon from "../../../assets/icons/Icon";
+import { Tag } from "@common";
 
 const Lists = ({ className, list }) => {
   if (className == 'tech-icons') {
     return <div className={className}>
-      {list.map(tech => <img key={uuidv4()} src={tech} />)}
+      {list.map(tech => <Tag key={uuidv4()}
+        imgStyles={{ width: '25px', height: '24px' }}
+        src={tech} text={"react"} />)}
     </div>
   }
 

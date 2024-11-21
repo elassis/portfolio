@@ -15,9 +15,10 @@ import moviesBanner from "./moviesBanner.png";
 import techniciansBanner from "./techniciansBanner.png";
 import misacordom from "./misacordom.png";
 import roosterBanner from "./roosterBanner.png";
-
-
-
+import projectImg from "./project_img.jpg";
+import enmaImage from "./enma_foto.jpg";
+import tsLogo from "./tsLogo.png";
+import nodeJsLogo from "./nodeJs.png";
 
 export {
   jsLogo,
@@ -32,8 +33,12 @@ export {
   webpackLogo,
   phpLogo,
   wordpressLogo,
+  tsLogo,
+  nodeJsLogo,
   misacordom,
   moviesBanner,
   techniciansBanner,
   roosterBanner,
+  projectImg,
+  enmaImage,
 };

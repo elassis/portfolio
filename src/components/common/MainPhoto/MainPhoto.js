@@ -1,20 +1,19 @@
 import React from "react";
 import { StyledMainPhoto } from "./MainPhotoStyles";
+import { motion } from "framer-motion";
+import { enmaImage } from "../../../assets/images";
 
-const MainPhoto = () => {
+const MainPhoto = (props) => {
   return (
-    <StyledMainPhoto data-testid="photo-container">
-      <div className="container">
-        <div className="outer circle">
-          <div className="middle circle">
-            <div className="inner circle">
-            </div>
-          </div>
-        </div>
-      </div>
-    </StyledMainPhoto>
+    <StyledMainPhoto
+      data-testid="photo-container"
+      children={<img alt="main-photo" src={enmaImage} />}
+      as={motion.div}
+      initial={{ y: -650 }}
+      animate={{ y: 0 }}
+      transition={{ type: "spring", duration: 2 }}
+    />
   );
 };
-
 
 export default MainPhoto;

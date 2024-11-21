@@ -1,24 +1,19 @@
 import styled from "styled-components";
 
-export const SkillComponentContainer = styled.div`
-position:relative;
-  width:310px;
-  height:390px;
-  padding:20px;
-  overflow:hidden;
-  
-  @media(min-width:1000px){
-    width:1000px;
-  }
-`;
 
 export const InnerContainer = styled.div`
-  position:absolute;
-  width:1000px;
-  margin-left:-${props => props.$scroll} !important;
+  width:100%;
   display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:20px;
-  transition: all 1000ms ease;
+  justify-content:space-between;
+
+  @media(max-width:768px){
+    width:600px;
+    overflow:auto;
+    gap:20px;
+    justify-content:space-evenly;
+  }
+
+  @media(max-width:400px){
+    width:325px;
+  }
 `;

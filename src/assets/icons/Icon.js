@@ -38,7 +38,9 @@ const Icon = ({
   callback = null,
   width = "25px",
   height = "25px",
-  color = colors.blue,
+  strokeColor = colors.blue,
+  fillColor = colors.blue,
+  svgStyles = { margin: 'auto 0' },
   viewBox = "0 0 21 28"
 }) => {
 
@@ -47,10 +49,10 @@ const Icon = ({
       xmlns="http://www.w3.org/2000/svg"
       width={width}
       height={height}
-      fill={`#${color}`}
-      stroke={`#${color}`}
+      fill={`#${fillColor}`}
+      stroke={`#${strokeColor}`}
       viewBox={viewBox}
-      style={{ margin: 'auto 0' }}
+      style={svgStyles}
       role="img"
       onClick={callback}
     >

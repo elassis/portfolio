@@ -5,34 +5,22 @@ import { StyledText } from "./TextStyles";
 import { MAIN_EXCERT } from "../../../utils/constants";
 import { Typewriter } from "react-simple-typewriter";
 
-const Text = ({ children, style = {}, color = colors.white, fontSize = "20px", className, isDynamic = false }) => {
-
-  const textArr = [
-    { key: 0, text: MAIN_EXCERT.slice(0, 70) },
-    {
-      key: 1,
-      text: (
-        <span
-          style={{
-            display: "inline-block",
-            height: "27px",
-            width: "78px",
-            fontWeight: "700",
-          }}
-        >
-          <Typewriter loop={false} words={["design", "develop", "create"]} />
-        </span>
-      ),
-    },
-    { key: 2, text: MAIN_EXCERT.slice(86) },
-  ];
+const Text = ({
+  children,
+  style = {},
+  color = colors.lightGrey,
+  fontSize = "20px",
+  className,
+  isDynamic = false,
+}) => {
   return (
-    <StyledText className={className} style={style} $fontSize={fontSize} $color={color}>
-      {!isDynamic && children}
-      {isDynamic && textArr.map((e) => {
-        return <span key={e.key}>{e.text}</span>;
-      })}
-
+    <StyledText
+      className={className}
+      style={style}
+      $fontSize={fontSize}
+      $color={color}
+    >
+      {children}
     </StyledText>
   );
 };
