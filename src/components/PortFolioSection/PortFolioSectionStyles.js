@@ -3,10 +3,6 @@ import styled from "styled-components";
 export const InnerContainer = styled.div`
   display: flex;
   flex-direction: column;
-
-  @media (max-width:400px){
-
-  }
 `;
 
 export const Row = styled.div`
@@ -18,7 +14,7 @@ export const Row = styled.div`
     gap:10px !important;
   }
 
-  @media (max-width:400px){
+  @media (max-width:500px){
     .carousel-container {
       width:320px;
     }

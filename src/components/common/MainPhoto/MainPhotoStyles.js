@@ -15,7 +15,7 @@ export const StyledMainPhoto = styled.div`
     height:auto;
   }
 
-  @media (max-width:400px){
+  @media (max-width:500px){
     width: 340px;
     height: 337px;
   }

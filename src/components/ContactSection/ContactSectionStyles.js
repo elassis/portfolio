@@ -59,7 +59,7 @@ export const StyledInfoBody = styled.div`
   box-sizing: border-box;
   background-color: #${colors.ligthBlue25};
 
-  @media(max-width:400px){
+  @media(max-width:500px){
     margin-top:20px;
     justify-content:center !important;
   }
@@ -80,7 +80,7 @@ export const StyledSectionContainer = styled.div`
     flex-direction: row;
   }
 
-  @media (max-width:400px){
+  @media (max-width:500px){
     flex-direction:column-reverse;
     align-items:center;
   }
@@ -95,7 +95,7 @@ export const InfoSection = styled.div`
     }
   }
 
-  @media (max-width:400px) {
+  @media (max-width:500px) {
     width: 100%;
     margin-top:20px;
     justify-content: center !important;
