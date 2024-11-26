@@ -19,7 +19,7 @@ export const StyledProjectContainer = styled.div`
   overflow: hidden;
   z-index: 10;
 
-  @media (max-width: 400px) {
+  @media (max-width: 800px) {
     width: 100%;
   }
 `;

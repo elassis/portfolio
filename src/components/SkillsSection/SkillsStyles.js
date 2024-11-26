@@ -2,18 +2,16 @@ import styled from "styled-components";
 
 
 export const InnerContainer = styled.div`
-  width:100%;
+  max-width:900px;
   display:flex;
-  justify-content:space-between;
+  gap:40px;
 
-  @media(max-width:768px){
-    width:600px;
+  @media(max-width:800px){
+    width:100%;
     overflow:auto;
     gap:20px;
     justify-content:space-evenly;
   }
 
-  @media(max-width:500px){
-    width:325px;
-  }
+
 `;

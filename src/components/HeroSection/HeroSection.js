@@ -11,7 +11,7 @@ const HeroSection = (props) => {
       sectionId="hero"
       sectionHeight={"fit-content"}
       backgroundColor={colors.white}
-      styles={{ padding: window.innerWidth > 400 && "100px 0" }}
+      styles={{ padding: window.innerWidth > 400 && "100px 30px" }}
       containerStyles={{ justifyContent: "space-between" }}
     >
       <MainPhoto />

@@ -6,7 +6,8 @@ export const StyledSection = styled.div`
   height: ${(props) => props.$sectionHeight};
   margin: auto;
   background-color: #${colors.white};
-  padding: 50px 0;
+  padding: 50px 30px;
+  box-sizing: border-box;
   overflow: hidden;
 
   @media (max-width: 400px) {
@@ -20,7 +21,7 @@ export const StyledSection = styled.div`
 
     @media (max-width: 800px) {
       max-width: 600px;
-      height:fit-content;
+      height: fit-content;
       p:first-child {
         text-align: left;
       }
@@ -36,7 +37,6 @@ export const StyledSection = styled.div`
 export const ChildrenContainer = styled.div`
   max-width: 900px;
   margin: auto;
-  padding: 0px 20px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -47,7 +47,7 @@ export const ChildrenContainer = styled.div`
   @media (max-width: 800px) {
     max-width: 600px;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
   }
 
