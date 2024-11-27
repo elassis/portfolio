@@ -34,7 +34,7 @@ function NavigationButtons({ buttonsAmount, buttonsHandler }) {
   return (
     <NavigationContainer
       as={motion.div}
-      initial={{ x: window.innerWidth > 400 && -400, opacity: 0 }}
+      initial={{ x: window.innerWidth > 800 && -400, opacity: 0 }}
       whileInView={{ x: 0, opacity: 1, transition: { delay: 1, duration: 1 } }}
       viewport={{ once: true }}
     >
